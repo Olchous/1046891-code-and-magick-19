@@ -16,16 +16,14 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
    .querySelector('.setup-similar-item');
 
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function createWizard() {
   return {
-    name: wizardNames[getRandomInt(0, wizardNames.lenght)] + ' ' + wizardSurnames[getRandomInt(0, wizardSurnames.lenght)],
-    coatColor: coatColor[getRandomInt(0, coatColor.lenght)],
-    eyesColor: eyesColor[getRandomInt(0, eyesColor.lenght)]
+    name: wizardNames[getRandomInt(0, wizardNames.length - 1)] + ' ' + wizardSurnames[getRandomInt(0, wizardSurnames.length - 1)],
+    coatColor: coatColor[getRandomInt(0, coatColor.length - 1)],
+    eyesColor: eyesColor[getRandomInt(0, eyesColor.length - 1)]
   };
 }
 
@@ -40,6 +38,7 @@ var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
+  wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
   return wizardElement;
 };
 
