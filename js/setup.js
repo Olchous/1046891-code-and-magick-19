@@ -15,50 +15,25 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
    .content
    .querySelector('.setup-similar-item');
 
-// var wizards = [
-//   {
-//     name: wizardNames[Math.random() * wizardNames.length] + wizardSurnames[Math.random() * wizardSurnames.length],
-//     coatColor: coatColor[Math.random() * coatColor.lenght],
-//     eyesColor: eyesColor[Math.random() * eyesColor.lenght]
-//   },
-//   {
-//     name: wizardNames[Math.random() * wizardNames.length] + wizardSurnames[Math.random() * wizardSurnames.length],
-//     coatColor: coatColor[Math.random() * coatColor.lenght],
-//     eyesColor: eyesColor[Math.random() * eyesColor.lenght]
-//   },
-//   {
-//     name: wizardNames[Math.random() * wizardNames.length] + wizardSurnames[Math.random() * wizardSurnames.length],
-//     coatColor: coatColor[Math.random() * coatColor.lenght],
-//     eyesColor: eyesColor[Math.random() * eyesColor.lenght]
-//   },
-//   {
-//     name: wizardNames[Math.random() * wizardNames.length] + wizardSurnames[Math.random() * wizardSurnames.length],
-//     coatColor: coatColor[Math.random() * coatColor.lenght],
-//     eyesColor: eyesColor[Math.random() * eyesColor.lenght]
-//   }
-// ];
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function createWizard() {
+  return {
+    name: wizardNames[getRandomInt(0, wizardNames.lenght)] + ' ' + wizardSurnames[getRandomInt(0, wizardSurnames.lenght)],
+    coatColor: coatColor[getRandomInt(0, coatColor.lenght)],
+    eyesColor: eyesColor[getRandomInt(0, eyesColor.lenght)]
+  };
+}
 
 var wizards = [
-  {
-    name: wizardNames[Math.floor(Math.random()) * wizardNames.length] + ' ' + wizardSurnames[Math.floor(Math.random()) * wizardSurnames.length],
-    coatColor: coatColor[0],
-    eyesColor: eyesColor[0]
-  },
-  {
-    name: wizardNames[0] + wizardSurnames[0],
-    coatColor: coatColor[0],
-    eyesColor: eyesColor[0]
-  },
-  {
-    name: wizardNames[0] + wizardSurnames[0],
-    coatColor: coatColor[0],
-    eyesColor: eyesColor[0]
-  },
-  {
-    name: wizardNames[0] + wizardSurnames[0],
-    coatColor: coatColor[0],
-    eyesColor: eyesColor[0]
-  }
+  createWizard(),
+  createWizard(),
+  createWizard(),
+  createWizard()
 ];
 
 var renderWizard = function (wizard) {
