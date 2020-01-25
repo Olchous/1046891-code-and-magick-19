@@ -15,6 +15,13 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
    .content
    .querySelector('.setup-similar-item');
 
+/**
+ * Returns a random number
+ * @param {number} min - min number of range
+ * @param {number} max - max number of range
+ * @returns {number} integer number
+*/
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -33,7 +40,6 @@ var wizards = [
   createWizard(),
   createWizard()
 ];
-
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;

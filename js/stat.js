@@ -41,15 +41,15 @@ function getColor() {
 }
 
 window.renderStatistics = function (ctx, names, times) {
-  ctx.lineJoin = "round";
-  ctx.strokeStyle = "#fff";
+  ctx.lineJoin = 'round';
+  ctx.strokeStyle = '#fff';
   ctx.lineWidth = cornerRadius;
   renderCloud(ctx, CLOUD_X + 10, CLOUD_Y + 10, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
   ctx.strokeRect(CLOUD_X - 1, CLOUD_Y - 1, CLOUD_WIDTH + 2, CLOUD_HEIGHT + 2);
-  ctx.lineJoin = "miter";
+  ctx.lineJoin = 'miter';
   ctx.lineWidth = 0;
-  ctx.strokeStyle = "#000";
+  ctx.strokeStyle = '#000';
 
   renderText(ctx);
   ctx.fillStyle = '#000';
