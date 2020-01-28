@@ -37,13 +37,14 @@ function createWizard() {
 
 function createWizards() {
   var wizards = [];
-  for (var i = 0; i <= WIZARDS_NUMBER; i++) {
+  for (var i = 0; i < WIZARDS_NUMBER; ++i) {
     wizards.push(createWizard());
   }
   return wizards;
 }
 
-console.log(createWizards());
+var wizards = createWizards();
+
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
