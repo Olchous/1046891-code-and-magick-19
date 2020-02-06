@@ -67,6 +67,7 @@ similarListElement.appendChild(fragment);
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
 
 // домашка часть 2
+
 // функции открытия и закрытия
 var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
@@ -113,7 +114,7 @@ setupClose.addEventListener('keydown', function (evt) {
 var userNameInput = setup.querySelector('.setup-user-name');
 
 // валидатор
-userNameInput.addEventListener('invalid', function (evt) {
+userNameInput.addEventListener('invalid', function () {
   if (userNameInput.validity.tooShort) {
     userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
   } else if (userNameInput.validity.tooLong) {
