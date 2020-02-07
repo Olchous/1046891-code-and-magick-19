@@ -158,5 +158,5 @@ colorEyes.addEventListener('click', function () {
 var colorBall = document.querySelector('.setup-fireball-wrap');
 colorBall.addEventListener('click', function () {
   colorBall.style.backgroundColor = fireballColor[getRandomInt(0, fireballColor.length)];
-  colorBall.style.value = fireballColor[getRandomInt(0, fireballColor.length)];
+  colorBall.setAttribut('value', fireballColor[getRandomInt(0, fireballColor.length)]);
 });
