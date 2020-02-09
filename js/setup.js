@@ -83,6 +83,7 @@ var openPopup = function () {
   document.addEventListener('keydown', onPopupEscPress);
 };
 
+var input = document.querySelector('.setup-user-name');
 var closePopup = function () {
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEscPress);
@@ -115,7 +116,7 @@ setupClose.addEventListener('keydown', function (evt) {
 
 var userNameInput = setup.querySelector('.setup-user-name');
 
-// валидатор
+// валидатор hyml5
 // userNameInput.addEventListener('invalid', function () {
 //   if (userNameInput.validity.tooShort) {
 //     userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
